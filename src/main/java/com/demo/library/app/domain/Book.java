@@ -1,22 +1,18 @@
 package com.demo.library.app.domain;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Builder
 @Getter
 @NoArgsConstructor(access= AccessLevel.PROTECTED)
+@AllArgsConstructor
+@Builder
 @Entity
 public class Book extends BaseEntity{
     private static final String DELETED_STAT = "N";
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
     private String author;
     private String publisher;
     private String name;
