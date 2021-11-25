@@ -28,6 +28,9 @@ public class User extends BaseEntity{
     @OneToMany(mappedBy = "order", fetch=FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Order> order;
 
+    @OneToMany(mappedBy = "user", fetch=FetchType.LAZY, cascade = CascadeType.REMOVE)
+    private List<UserReservation> userReservation;
+
     public User update(int lateFee) {
         this.lateFee = lateFee;
         return this;

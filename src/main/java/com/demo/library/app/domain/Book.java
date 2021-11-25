@@ -18,6 +18,7 @@ public class Book extends BaseEntity{
     private String name;
     private String stat;
 
+    private int floor;
     private int gimmick;
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -29,6 +30,9 @@ public class Book extends BaseEntity{
 
     @OneToMany(mappedBy = "loan", fetch=FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Loan> loan;
+
+    @OneToMany(mappedBy = "book", fetch=FetchType.LAZY, cascade = CascadeType.REMOVE)
+    private List<BookReservation> bookReservation;
 
     public Book update(String stat){
         this.stat = stat;

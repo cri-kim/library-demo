@@ -1,16 +1,12 @@
 package com.demo.library.app.domain;
 
-import lombok.*;
-
-import javax.persistence.*;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.util.List;
 
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Builder
-@Entity
-public class Order extends BaseEntity{
+public class Review  extends BaseEntity{
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(foreignKey = @ForeignKey(name = "user_id"))
@@ -19,4 +15,8 @@ public class Order extends BaseEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(foreignKey = @ForeignKey(name="book_id"))
     private List<Book> book;
+
+    private int score;
+
+    private String stat;
 }
