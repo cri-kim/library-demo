@@ -12,9 +12,6 @@ import java.util.List;
 @Builder
 @Entity(name="category")
 public class Category extends BaseEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String name;
 
     @OneToMany(mappedBy = "category", fetch=FetchType.LAZY, cascade = CascadeType.REMOVE)

@@ -21,16 +21,17 @@ public abstract class BaseEntity {
     protected Long id;
 
     @CreatedDate
-    private LocalDateTime regDtm;
+    private LocalDateTime createdAt;
 
     @LastModifiedDate
-    private LocalDateTime modDtm;
+    private LocalDateTime updatedAt;
 
-    protected BaseEntity(LocalDateTime regDtm){
-        this.regDtm = regDtm;
+    protected BaseEntity(LocalDateTime createdAt){
+
+        this.createdAt = createdAt;
     }
-    protected BaseEntity(Long id, LocalDateTime regDtm){
+    protected BaseEntity(Long id, LocalDateTime createdAt){
         this.id = id;
-        this.regDtm = regDtm;
+        this.createdAt = createdAt;
     }
 }
