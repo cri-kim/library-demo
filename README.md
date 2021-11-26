@@ -2,6 +2,8 @@
 ## Introduce
  spring boot로 개발된 도서관리 시스템입니다. 기본적인 구조로 되어있습니다.
 ## Architecture
+![spring-library-playground-erd](https://user-images.githubusercontent.com/47730634/143588841-9c9e5e07-4d0b-4973-bdbd-99604a122164.png)
+
 
 ## Tech Stack
 ### client
