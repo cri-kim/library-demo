@@ -27,7 +27,6 @@ public abstract class BaseEntity {
     private LocalDateTime updatedAt;
 
     protected BaseEntity(LocalDateTime createdAt){
-
         this.createdAt = createdAt;
     }
     protected BaseEntity(Long id, LocalDateTime createdAt){
