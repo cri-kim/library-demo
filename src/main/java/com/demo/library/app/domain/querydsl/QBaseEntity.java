@@ -33,7 +33,6 @@ public class QBaseEntity extends EntityPathBase<BaseEntity> {
     }
 
     public QBaseEntity(PathMetadata metadata) {
-
         super(BaseEntity.class, metadata);
     }
 }

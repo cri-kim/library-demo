@@ -33,6 +33,8 @@ public class QBook extends EntityPathBase<Book> {
     public final NumberPath<Integer> floor = createNumber("floor",Integer.class);
     public final NumberPath<Integer> gimmick = createNumber("gimmick",Integer.class);
 
+    public final QCategory category;
+
     public QBook(String variable){
         this(Book.class, forVariable(variable), INITS);
     }
@@ -50,5 +52,7 @@ public class QBook extends EntityPathBase<Book> {
 
     public QBook(Class<? extends Book> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
+        this.category = inits.isInitialized("category")
+                ? new QCategory(forProperty("category"), inits.get("category")):null;
     }
 }
